@@ -37,7 +37,7 @@ protected:
 	
 public:
 	//Constructores y destructores
-	Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho, int _alto, std::string _nombre);
+	Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho, int _alto, std::string _nombre, string _texto);
 	~Panel() {};
 
 	//Metodos accesores

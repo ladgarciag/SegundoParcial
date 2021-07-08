@@ -2,7 +2,7 @@
 #include "../GameManager.h"
 
 
-Panel::Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho, int _alto, string _nombre){
+Panel::Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho, int _alto, string _nombre, string _texto){
     renderer = _renderer;
     panel = new SDL_Rect({ _posicionX, _posicionY, _ancho, _alto });
 	nombre = _nombre;
@@ -14,7 +14,7 @@ Panel::Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho
     etiqueta = new SDL_Rect({ _posicionX + 1, _posicionY + 1, _ancho, _alto });
     etiquetaTamanoFuente = 15;
 
-    etiquetaTexto = "[Sin Texto]";
+    etiquetaTexto = _texto;
     etiquetaFuente = TTF_OpenFont("Resources/Fuentes/BarlowCondensed-Bold.ttf", etiquetaTamanoFuente);
     etiquetaSDLColor = new SDL_Color({ 0, 70, 210});
     setEtiquetaColorRGBA(20, 120, 220, 250);

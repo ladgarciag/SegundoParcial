@@ -55,13 +55,13 @@ int GUI::initializarSDL()
 void GUI::agregarPanel(int _x, int _y, int _w, int _h, string _nombre, int _r, int _g, int _b, int _a, bool _flag)
 {
     int offset = 2;
-    Panel* panel_border = new Panel(renderer, _x - offset, _y - offset, _w + offset + offset, _h + offset + offset, _nombre + " border");
+    Panel* panel_border = new Panel(renderer, _x - offset, _y - offset, _w + offset + offset, _h + offset + offset, _nombre + " border", "B");
     panel_border->setPanelColorRGBA(0, 0, 0, 255);
     panel_border->setRevisarActividadMouse(false);
 
     paneles.push_back(panel_border);
 
-    Panel* panel = new Panel(renderer, _x, _y, _w, _h, _nombre);
+    Panel* panel = new Panel(renderer, _x, _y, _w, _h, _nombre,"A");
     panel->setPanelColorRGBA(_r, _g, _b, _a);
     panel->setRevisarActividadMouse(true);
     panel->setClickedOn(false);
