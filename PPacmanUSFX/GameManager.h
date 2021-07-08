@@ -52,12 +52,15 @@ private:
 public:
     static GameManager* crearInstancia();
 
+    void setJuegoEnEjecucion(bool _juego_en_ejecucion) { juego_en_ejecucion = _juego_en_ejecucion; };
+
     int onExecute();
     bool onInit();
     void onEvent(SDL_Event* Event);
     void onLoop();
     void onRender();
     void onCleanup();
+    
 };
 
     

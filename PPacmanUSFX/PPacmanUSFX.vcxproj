@@ -147,8 +147,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\vclibs\SDL2_ttf\include;E:\vclibs\SDL2_mixer\include;E:\vclibs\SDL2_image\include;E:\vclibs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\vclibs\SDL2_ttf\lib\x64;E:\vclibs\SDL2_mixer\lib\x64;E:\vclibs\SDL2_image\lib\x64;E:\vclibs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>c:\vclibs\SDL2_ttf\include;C:\vclibs\SDL2_mixer\include;C:\vclibs\SDL2_image\include;C:\vclibs\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\vclibs\SDL2_ttf\lib\x64;C:\vclibs\SDL2_mixer\lib\x64;C:\vclibs\SDL2_image\lib\x64;C:\vclibs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

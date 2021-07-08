@@ -135,7 +135,7 @@ bool MapGenerator::load(string path)
 	GameObject* objetoPanel2 = new Panel(TextureManager::getInstancia()->getRenderer(), 550, 500, 100, 50, "PANEL B");
 	((Panel*)objetoPanel1)->setPanelColorRGBA(10, 255, 24, 255);
 	GameObject* objetoPanel3 = new Panel(TextureManager::getInstancia()->getRenderer(), 250, 500, 100, 50, "PANEL C");
-	((Panel*)objetoPanel3)->setPanelColorRGBA(100, 100, 300	, 255);
+	((Panel*)objetoPanel3)->setPanelColorRGBA(500, 0, 300	, 255);
 
 	((GUIComposite*)contenedorPaneles)->add((Component*)objetoPanel1);
 	((GUIComposite*)contenedorPaneles)->add((Component*)objetoPanel2);

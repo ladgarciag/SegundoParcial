@@ -1,5 +1,5 @@
 #include "Panel.h"
-#include "/Users/PLANET COMPUTERS/Downloads/SPacmanUSFX-master (5)/SPacmanUSFX-master/PPacmanUSFX/GameManager.h"
+#include "../GameManager.h"
 
 
 Panel::Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho, int _alto, string _nombre){
@@ -14,9 +14,9 @@ Panel::Panel(SDL_Renderer* _renderer, int _posicionX, int _posicionY, int _ancho
     etiqueta = new SDL_Rect({ _posicionX + 1, _posicionY + 1, _ancho, _alto });
     etiquetaTamanoFuente = 15;
 
-    etiquetaTexto = "[lol]";
+    etiquetaTexto = "[Sin Texto]";
     etiquetaFuente = TTF_OpenFont("Resources/Fuentes/BarlowCondensed-Bold.ttf", etiquetaTamanoFuente);
-    etiquetaSDLColor = new SDL_Color({ 150, 70, 210});
+    etiquetaSDLColor = new SDL_Color({ 0, 70, 210});
     setEtiquetaColorRGBA(20, 120, 220, 250);
     revisarActividadMouse = true;
     clickedOn = true;
@@ -164,16 +164,19 @@ void Panel::update()
 
         std::cout << getNombre() << ": CLICKED" << std::endl;
         // Insert button action here (below)
-        if (getNombre() == "BUTTON A") {
+        if (getNombre() == "PANEL A") {
             onClickButton();
         }
         // ...
+        
         if (getNombre() == "PANEL C") {
             ExitClickButton();
 
         }
         clickedOn = false;
     }
+
+  
 }
 
 
@@ -186,8 +189,8 @@ void Panel::onClickButton()
 
 void Panel::ExitClickButton()
 {
-    if (SDL_MOUSEBUTTONDOWN == true) {
-        return SDL_Quit();
+    if (SDL_MOUSEBUTTONUP != true) {
+        GameManager::crearInstancia()->setJuegoEnEjecucion(false);;
 
    }
        
