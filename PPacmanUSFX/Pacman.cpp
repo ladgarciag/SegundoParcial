@@ -51,6 +51,18 @@ void Pacman::setTileActual(Tile* _tileNuevo) {
 
 }
 
+bool Pacman::loadMedia() {
+	//Loading success flag
+	bool success = true;
+	gScratch = Mix_LoadWAV(".../Resources/WakkaWakka.wav");
+	if (gScratch == NULL)
+	{
+		printf("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+		success = false;
+	}
+	return success;
+}
+
 void Pacman::update()
 {
 	// Revisar colisiones con monedas
@@ -66,7 +78,8 @@ void Pacman::update()
 		
 		if (revisarColision(eatingHole, tileSiguiente->getMoneda()->getColisionador())) {
 			tileSiguiente->getMoneda()->deleteGameObject();
-			/*mAudioMgr->PlaySFX("WakkaWakka.wav", 1);*/
+			Mix_PlayChannel(-1, gScratch, 0);
+		/*	Mix_PlayMusic(mAssetMgr->getMusic(gScratch), 0);*/
 		}
 	}
 
@@ -141,6 +154,8 @@ void Pacman::render()
 
 void Pacman::deleteGameObject()
 {
+	Mix_FreeChunk(gScratch);
+	gScratch = NULL;
 	GameObject::deleteGameObject();
 	tileActual->setPacman(nullptr);
 }

@@ -81,6 +81,8 @@ void TextureManager::inicializarRecursos()
 	paredGalacticoTexture = new Texture();
 	paredGalacticoTexture->loadFromImage(pathParedGalactico);
 	addTextura("pared_galactico", paredGalacticoTexture);
+
+
 			
 	// Frames de animacion
 	framesAnimacionPacmanClasico = new AnimationFrames();

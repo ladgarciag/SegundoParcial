@@ -23,9 +23,11 @@ protected:
 	//static Pacman* instancia;
 
 	//int estado;
-
+	bool loadMedia();
 	GameObjectType returType() { return PACMAN; }
 	AudioManager* mAudioMgr;
+
+	Mix_Chunk* gScratch = NULL;
 public:
 	//Constructores y destructores
 	Pacman(Tile* _tile, Texture* _textura);
